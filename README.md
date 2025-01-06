@@ -9,7 +9,7 @@ Inspired by `Ruby on Rails`.
 As package:
 
 ```bash
-pip install service-reponse
+pip install service-response
 ```
 
 As module via (git clone):
