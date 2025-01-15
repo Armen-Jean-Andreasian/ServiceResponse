@@ -13,3 +13,17 @@ class TestServiceResponse(unittest.TestCase):
         self.assertEqual(response.to_dict(), {
             "status": False, "data": None, "error": None, "reason": "Error", "message": None
         })
+
+    def test_typehint(self):
+        try:
+            response: ServiceResponse[bool, str] = ServiceResponse(status=False, error="Error")
+            self.assertIsInstance(response, ServiceResponse)
+            self.assertIsInstance(response.status, bool)
+            self.assertIsInstance(response.error, str)
+            self.assertIsNone(response.data)
+        except TypeError:
+            self.fail("TypeError raised: 'ServiceResponse' is not subscriptable")
+
+
+if __name__ == '__main__':
+    unittest.main()

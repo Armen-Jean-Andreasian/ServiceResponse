@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-__version__ = "0.1"
+__version__ = "0.1.2"
 
 setup(
     name='service_response',
-    version='0.1',
+    version='0.1.2',
     packages=find_packages(),
     author='Armen-Jean Andreasian',
     author_email='armen_andreasian@proton.me',
