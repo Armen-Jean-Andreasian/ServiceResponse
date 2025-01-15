@@ -1,7 +1,13 @@
-class ServiceResponse:
-    """Special class designed for inter-app communication. Supports if true check."""
+from typing import Generic, TypeVar
 
-    def __init__(self, status: bool, data=None, error=None, reason=None, message=None):
+T = TypeVar("T")  # For data type
+E = TypeVar("E")  # For error type
+
+
+class ServiceResponse(Generic[T, E]):
+    """Special class designed for inter-app communication. Supports if-true checks."""
+
+    def __init__(self, status: bool, data: T = None, error: E = None, reason=None, message=None):
         self.status = status
         self.data = data
         self.error = error
